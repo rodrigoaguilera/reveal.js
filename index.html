@@ -1,432 +1,799 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>Presentation title - Speaker name</title>
+    <title>Code review - Rodrigo Aguilera</title>
 
     <link rel="shortcut icon" href="lib/image/favicon.ico" />
-		<meta name="description" content="Presentation description">
-		<meta name="author" content="Speaker Name">
+    <meta name="description" content="An overview of the importance of code review and the tools available to perform it.">
+    <meta name="author" content="Rodrigo Aguilera">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
-		<link rel="stylesheet" href="css/theme/ddd.css" id="theme">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="css/theme/ddd.css" id="theme">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+    <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+      <![endif]-->
+  </head>
 
-	<body>
+  <body>
 
-		<div class="reveal">
-        <footer>
-            <div class="branding--logo">
-                <span class="logo__image"><img src="lib/image/logo.png" alt="DrupalDeveloperDays Montpellier 2015 logo" height="55px"></span>
-                <p class="logo__site-name">#drupaldevdays</p>
-            </div>
-            <div class="session--info">
-                <p class="session__title">Presentation title <span class="seperator">&nbsp;/&nbsp;</span></p>
-                <p class="session__presenter">Speaker Name</p>
-            </div>
-        </footer>
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section class="ddd-intro" data-background="lib/image/background.jpg">
-					<h1>Presentation name</h1>
-					<h2>Speaker name - @SpeakerName</h3>
-				</section>
+    <div class="reveal">
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						This template is aimed to speakers who want to us reveal.js for their slides during DrupalDeveloperDays Montpellier 2015.
-					</p>
-				</section>
+      <footer>
+        <div class="branding--logo">
+          <span class="logo__image"><img src="lib/image/logo.png" alt="DrupalDeveloperDays Montpellier 2015 logo" height="55px"></span>
+          <p class="logo__site-name">#drupaldevdays</p>
+        </div>
+        <div class="session--info">
+          <p class="session__title">Code review <span class="seperator">&nbsp;/&nbsp;</span></p>
+          <p class="session__presenter">Rodrigo Aguilera</p>
+        </div>
+      </footer>
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
 
-				<section>
-				  <h2>How to use this template</h2>
-					<ul>
-					  <li>Fork <a href="https://github.com/SebCorbin/reveal.js">this repo</a></li>
-					  <li>Edit the file index.html and change according to your session:
-					    <ul>
-					      <li>The &lt;title&gt; tag</li>
-					      <li>The presentation title and speaker name in the &lt;footer&gt; tag</li>
-					      <li>The &lt;h1&gt; and &lt;h2&gt; in the first &lt;section&gt; tag</li>
-					    </ul>
-					  </li>
-					  <li>Commit your changes to the branches <strong>master</strong> and <strong>gh-pages</strong></li>
-					  <li>After a while, they will be <a href="https://sebcorbin.github.io/reveal.js">publicly accessible on http://username.github.io/repository</a></li>
-					</ul>
-				</section>
+        <section class="ddd-intro" data-background="lib/image/background.jpg">
+          <h1>Perform code review inside your development team</h1>
+          <h2>Rodrigo Aguilera - @marinero</h2>
+          <aside class="notes">
+            Thank sponsors and organization. First talk in English.
+            Loosely related to drupal.
+            <br>
+            This talk is aimed at people not very convinced about code review. We we'll also do a overview of the tools available.
+            <br>
+            comparison about tools
+          </aside>
+        </section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+        <section>
+          <h2>Who am I?</h2>
+          <h3> Rodrigo Aguilera</h3>
+          <a href="http://dgo.to/@rodrigoaguilera">dgo.to/@rodrigoaguilera</a>
+          <p>
+          <img src="lib/image/ymbra.png" style="background: none repeat scroll 0% 0% white;" />
+          </p>
+          <p>
+          Drupal developer at <a href="http://ymbra.com/">Ymbra</a>
+          </p>
+          <p>
+          rodrigo.aguilera@ymbra.com
+          </p>
+          <aside class="notes">
+            I collaborate sometime with the D8MI initiave and is what I'm trying to sprint on.
+            IRC
+          </aside>
+        </section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+        <section>
+          <h2>Acknowledgements</h2>
+          <p>
+          Pedro Cambra
+          <br />
+          Ymbra
+          </p>
+          <aside class="notes">
+            I refuse to put him as the last slide. I do it at the begining like in nobel prize speech.
+            <br />
+            He brought gerrit to Ymbra, he took the idea from what he was doing at commerceguys. I don't know if they continue with the same tool.
+            <br />
+            Maybe I had traumatic experience in other companies but they believe in code quality to some extent.
+          </aside>
+        </section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+        <section>
+          <h2>Why?</h2>
+            <p>
+            <ul>
+              <li>Reduces defects</li>
+              <li>Spreads code ownership</li>
+              <li>Mentors new developers</li>
+              <li>Changed my life as a developer</li>
+            </ul>
+          </p>
+          <aside class="notes">
+            First, how many of you do code review inside your team?
+            <br>
+            I am not going to be a zealot here saying "that thing that you do is not code review"
+            <br>
+            We are here because if enough code review was performed we would be finding horrible code in the wild.
+            <br>
+            Try to help you find the right tool for code review.
+          </aside>
+        </section>
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+        <section>
+          <h2>"But nobody does code review..."</h2>
+          <p>
+          <ul>
+            <li>Too busy to review</li>
+            <li>Code reviews can get nasty</li>
+            <li>Introduces a block</li>
+            <li>I don't want to leave the IDE</li>
+            <li>A cost effective solution</li>
+            <li>Is all about code quality</li>
+          </ul>
+          </p>
+          <aside class="notes">
+            Fixing a bug during the review proccess is much cheaper than if later phases, not talk about production.
+            <br>
+            If you cannot talk about code you have a problem of communication but I can show you how can you get the ego out of it.
+            <br>
+            There's tools to assist you also on the IDE.
+            <br>
+            If your are not convinced about code quality code review makes little sense.
+          </aside>
+        </section>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+        <section>
+          <h2>What am I talking about?</h2>
+          <p>
+          <br />
+          Systematic review of code by your peer developer.
+          <br>
+          <br />
+          Code review as a firewall.
+          </p>
+          <aside class="notes">
+          </aside>
+        </section>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
+        <section>
+          <h2>Be prepared</h2>
+          <p>
+          <ul>
+            <li>Try to make everything code </li>
+            <li>Review everything: configuration, file names, variable naming...</li>
+            <li>If it can be diffed it can be reviewed</li>
+            <li>The review should ignore all those files not relevant like images, binaries or intermediate code(e.g. sass)</li>
+          </ul>
+          </p>
+          <aside class="notes">
+            The way you deploy, the boilerplate code that you start a module/project with.
+            <br>
+            Sass sets a challenge because the site doesn't work without css.
+            <br>
+            As much of your workflow as possible be in code.
+            <br>
+            There is tools to review images too.
+            <br>
+            Review the patches and contrib modules: number of uses, maintanership...
+          </aside>
+        </section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
+        <section>
+          <h2>A change in the culture</h2>
+          <p>
+          <ul>
+            <li>The code is going to be read</li>
+            <li>Make code activity visible</li>
+            <li>Make code shareable with links</li>
+            <li>Make code digestible (encourage small changes)</li>
+            <li>Support conversations about code</li>
+          </ul>
+          </p>
+          <aside class="notes">
+             The comment I'm writing is going to be read by people, is not going to go into the black hole of the repository
+             <br>
+             My goal is easing you into this change of culture and since some of the tools I'm going to present you are opinionated.
+             <br>
+             Changes which are too large or too complicated to be reviewed quickly are often too large and too complicated, period. Nearly all large changes can be split apart into small, independent pieces which are easier to understand and test. Review tends to encourage smaller and better-factored changes.
+          </aside>
+        </section>
 
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
+        <section>
+          <h2>A change in the culture (continued)</h2>
+          <p>
+          <ul>
+            <li>The best time to talk about parts of the application you don't like</li>
+            <li>Code ownership</li>
+            <li>Be proud about your team not your code</li>
+            <li>Transmission of code and solutions automagically</li>
+            <li>You have a proccess in place when you are not sure about changes</li>
+            <li>Multi functional teams</li>
+          </ul>
+          </p>
+          <aside class="notes">
+            Show me the code.
+            <br />
+            Happens to us many time that we talk about a solution and is not very clear until we see the code.
+            <br>
+            You should try to reach an agreement, not impose your views.
+            <br />
+            You can discover some communication problems while introducing code review
+            <br>
+            Opening a file and finding code that you don't like is demoralizing
+            <br />
+            Can you look at my change when you have time? never happens
+          </aside>
+        </section>
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
 
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+        <section>
+          <h2>New developers</h2>
+          <p>
+          <ul>
+            <li>They will gain experience faster</li>
+            <li>Is much more safer for them to commit code</li>
+            <li>Developers are eager to fix the feedback and reach an agreement</li>
+          </ul>
+          </p>
+          <aside class="notes">
+            I cannot emphasize enough how great is codereview for this task.
+            <br>
+            By the time code review was introduced on my team I was still fresh.
+            <br>
+            At first a was a bit grumpy but soon I started to love it.
+            <br>
+            They want to code, and you force them to think about code.
+            <br>
+            You get them out of the attitude "It works"
+            <br />
+            But if you reviews others is more likely that they will review you.
+            <br />
+            Because the review procces blocks them.
+          </aside>
+        </section>
 
-    var nodes = document.querySelectorAll( selector );
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+        <section>
+          <h2>How to get started</h2>
+          <p>
+            <ul>
+              <li>Go slow</li>
+              <li>Just the diffs</li>
+              <li>Review just the scary smelly parts</li>
+              <li>On demand</li>
+            </ul>
+          </p>
+          <aside class="notes">
+            Maybe start with a team or one repo.
+            <br>
+            Don't fix that don't belong to this commit. You lose focus.
+            <br>
+            Need a post-commit tool.
+            <br />
+            All the members should be reviewed and review.
+          </aside>
+        </section>
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+        <section>
+          <h2>Pre/Post commit review</h2>
+          <p>
+          Pre commit is the most interesting and what most of tools do.
+          </p>
+          <p>
+          Post commit is also known as code audit or inspection.
+          </p>
+          <aside class="notes">
+            If you have common interface for browsing you can always do informal audit.
+            <br>
+            Code review as a firewall.
+            <br>
+            precommit review is more ready to chenge arquitecture.
+          </aside>
+        </section>
 
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+        <section>
+          <h2>Code Review by machines</h2>
+          <p>
+            <img width="200" src="lib/image/terminator.png" />
+            <br />
+          Integration with static analysis tools
+          <br>
+          <ul>
+            <li>Coding standards</li>
+            <li>Unit tests</li>
+            <li>Automated builds with continous integration</li>
+            <li>PMD Mess detector, Duplicate code</li>
+          </ul>
+          </p>
+          <aside class="notes">
+            Machines are mean but no one can blame them.
+            <br />
+            Probably you will have to explain the importance of code review to new developers.
+            <br />
+            Is great for test driven development.
+          </aside>
+        </section>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
+        <section>
+          <h2>Code review by humans</h2>
+          <p>
+          <ul>
+            <li>Requirements</li>
+            <li>Architecture</li>
+            <li>Futureproof code</li>
+            <li>Coding idioms</li>
+            <li>Potential reuse</li>
+            <li>Domain knowledge</li>
+          </ul>
+          </p>
+          <aside class="notes">
+            Drupal 8 and PHP 7 is the future.
+            <br />
+            An idiom is how we retrieve a node or check the role of a user.
+            <br />
+            Review happens in other professions.
+            <br />
+            Pair programming is another form of code
+          </aside>
+        </section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+        <section>
+          <h2>Pair programming</h2>
+          <p>
+            Another form of code review <br />
+          <ul>
+            <li>Real time</li>
+            <li>Very effective and great for mentoring</li>
+            <li>Requires two developers in the same location</li>
+            <li>Less value for the rest of the team</li>
+          </ul>
+          </p>
+          <aside class="notes">
+            The conversation is lost.
+          </aside>
+        </section>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
+        <section>
+          <h2>If you don't do code review</h2>
+          <p>
+          <ul>
+            <li class="fragment">Code ends up being very "personal"</li>
+            <li class="fragment">No full picture of the project</li>
+            <li class="fragment">Code that has never been looked at</li>
+            <li class="fragment">Useless blaming or no one is responsible for the code</li>
+            <li class="fragment">Monster code</li>
+            <li class="fragment">Bad code might remain in this condition forever</li>
+            <li class="fragment">No code reuse</li>
+            <li class="fragment">Members of the team find it hard to improve skills in the code writing craft</li>
 
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
+          </ul>
+          </p>
+          <aside class="notes">
+            Raise hands.
+            <br />
+            Remenber We are a team.
+            <br />
+            Monster code: old and scary.
+            <br />
+            Reuse functions.
+            <br />
+            External contractors.
+            <br />
+            Spaghetti code overall.
+          </aside>
+        </section>
 
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
 
-			</div>
+        <section>
+          <h2>Tool assisted code review</h2>
+          <p>
+          <ul>
+            <li>Manages workflow and notifications </li>
+            <li>Records of discussion</li>
+            <li>Asyncronous</li>
+            <li>Some are very opinionated</li>
+            <li>Minimum requirements: diffs, inline comments and states</li>
+            <li>Extras: roles, auto merge, commit, rebase, notifications, integration with other tools, etc.</li>
+          </ul>
+          </p>
+          <aside class="notes">
+            You can revisit the thread of comments or blame on the reviewers.
+            <br>
+            There's a lot of additional information in the discussion.
+            <br>
+            Pair programing is great but it requires to be in sync.
+            <br />
+            You don't really need roles or fancy stuff.
+            <br />
+            inline: comments: a comment just under the line it affect.
+          </aside>
+        </section>
 
-		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section>
+          <section>
+            <h2>Tools</h2>
+            <p>
+            <ul>
+              <li> Good ol' patches (Drupal.org)</li>
+              <li> Pull requests (merge requests in gitlab)</li>
+              <li> Gerrit</li>
+              <li> Redmine</li>
+            </ul>
+            </p>
+            <aside class="notes">
+              This are just some tools
+            </aside>
+          </section>
 
-		<script>
+          <section>
+            <h2>Drupal.org patches</h2>
+            <p>
+            <img src="lib/image/patch.png"/>
+            <br>
+            Big free software projects (vim and the linux kernel) use it.
+            </p>
+            <aside class="notes">
+              We should be all familiar with it.
+              <br />
+              Is kind of the legacy way to do code review.
+            </aside>
+          </section>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+          <section>
+            <h2>Drupal.org patches - Dreditor to the rescue</h2>
+            <p>
+            Helps us comment on the patches
+            <br>
+            <img width="700" src="lib/image/dreditor.png"/>
+            <br>
+            Also adds a link to simplytest.me
+            </p>
+            <aside class="notes">
+              simpleytestme can be considered a form of review.
+            </aside>
+          </section>
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+          <section>
+            <h2>Github pull requests (merge request on gitlab)</h2>
+            <p>
+            <ul>
+              <li>Merge the code from one branch to another</li>
+              <li>Can span many commits</li>
+              <li>Some developers prefer this way over d.o</li>
+            </ul>
+            </p>
+            <aside class="notes">
+              even remote branches.
+              <br />
+              Some modules are developed on github and cloned on d.o
+              <br />
+              doesn't take care much about your history
+              <br />
+              Is also very supported by continuous integration systems.
+              <br />
+              Don't enforce much like emails, commit messages or cleanness of the merge.
+            </aside>
+          </section>
 
-		</script>
 
-	</body>
+          <section>
+            <h2>Github pull requests</h2>
+            <p>
+            <img src="lib/image/githubpr.png"/>
+            </p>
+            <aside class="notes">
+              very fancy
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit</h2>
+            <p>
+            Web based git review system written in java <br>
+            <img src="lib/image/diffy.png" style="background: none repeat scroll 0% 0% white;" />
+            </p>
+            <aside class="notes">
+              Does one thing and does it good.
+              <br>
+              Can also hosts repos. Actually it takes control over the repo.
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit</h2>
+            <p>
+            Big projects using it
+            <ul>
+              <li>Android</li>
+              <li>Cyanogenmod</li>
+              <li>Wikimedia</li>
+              <li>Openstack</li>
+              <li>ChromeOS</li>
+              <li>And many other google projects</li>
+              <li><a href="https://gerrit-review.googlesource.com/#/q/status:open">Gerrit itself </a>
+            </ul>
+            </p>
+            <aside class="notes">
+              Wikipedia
+              <br>
+              And gerrit itself.
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit - Intro</h2>
+            <p>
+            <img src="lib/image/intro-quick-central-gerrit.png" />
+            </p>
+            <aside class="notes">
+              Get changes from the changes pool.
+              <br>
+              Clean commit history.
+              <br>
+              Submit (merge) happens automatically when is approved.
+              <br>
+              It has granular permissions (access control model).
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit list of changes</h2>
+            <p>
+            <img src="lib/image/gerritlist.png" />
+            </p>
+            <aside class="notes">
+              We try to do chop a feature in small tasks so that each one of them is a commit.
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit - a changeset</h2>
+            <p>
+            <img src="lib/image/gerritpage.png" />
+            </p>
+            <aside class="notes">
+              changeset: a commit.
+              <br />
+              Change id for iterations over a single commit.
+              <br>
+              Forces to ammend the changes.
+              <br>
+              Make your commit pretty until is approved.
+              <br>
+              The concept of interdiff in d.o
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit diff</h2>
+            <p>
+            <img src="lib/image/gerritdiff.png" />
+            </p>
+            <aside class="notes">
+              Diff between changes.
+              <br>
+              You can even post comments on the commit message.
+              <br>
+              You can stablish dependencies between commits.
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit approval</h2>
+            <p>
+            <img src="lib/image/gerritaproval.jpg" />
+            <br />
+            A commit can not be merged with at least one -2 and should have at least one +2
+            </p>
+            <aside class="notes">
+              The +1,s don't accumulate.
+              <br />
+              Not so brave reviewers can post a lot of +1.
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit automatic votes</h2>
+            <p>
+            <img src="lib/image/gerritvote.png" />
+            </p>
+            <aside class="notes">
+              You can and should integrate automatic review tools.
+              <br>
+              Great integration with jenkins.
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit - developer side tools</h2>
+            <p>
+            <code>git-review</code>
+            <br>
+            <code>gertty</code>
+            </p>
+            <aside class="notes">
+              We started using git-gerrit but is abandoned.
+              <br>
+              You can submit a topic.
+              <br> 
+              gertty allows offline work.
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Gerrit drawbacks</h2>
+            <p>
+            <ul>
+              <li>Interface</li>
+              <li>Has a learning curve</li>
+              <li>Requires to define a review process</li>
+              <li>No audit (Post commit)</li>
+            </ul>
+            </p>
+            <aside class="notes">
+              No informal review.
+              <br>
+              One change per commit.
+            </aside>
+          </section>
+
+
+          <section>
+            <h2>Redmine code review</h2>
+            <p>
+            <img src="lib/image/redmine-logo.png"/>
+            <ul>
+              <li><a href="http://www.redmine.org/plugins/redmine_code_review">Implemented as a plugin</a></li>
+              <li>Post-commit</li>
+              <li>Creates review request over a commit on demand</li>
+              <li>Or you can inspect the repo creating comments that are issues to be solved</li>
+            </ul>
+            </p>
+            <aside class="notes">
+              I wanted to mention a post commit review
+              <br />
+              Post commit review that can not be ignored.
+              <br />
+              There's many teams relying on redmine so maybe having the code review there makes sense.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <h2>Other tools</h2>
+          <p>
+          <ul>
+            <li>Differential (Phabricator suite) - PHP</li>
+          </ul>
+          <br />
+          <a href="https://en.wikipedia.org/wiki/List_of_tools_for_code_review">https://en.wikipedia.org/wiki/List_of_tools_for_code_review</a>
+          </p>
+          <aside class="notes">
+            Wikimedia has a plan to drop gerrit and use phabricator.
+            <br />
+            No phabricator integration with jenkins.
+          </aside>
+        </section>
+
+
+        <section>
+          <h2>Ego free reviews</h2>
+          <p>
+            <ul>
+              <li>No finger-pointing</li>
+              <li>No point scoring. It's all about doing things right.</li>
+              <li>Don't be pedantic</li>
+              <li>Find problems, not solutions</li>
+              <li>Embrace feedback</li>
+            </ul>
+          </p>
+          <aside class="notes">
+            Don't use "You are doing it wrong" I know the solution. Phrase everything as a question.
+            <br>
+            No gamification.
+            <br>
+            Let the automatic tools be pedantic. If it is not the case you can rephrase it.
+            <br>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Is not that difficult</h2>
+          <p>
+            <img src="lib/image/yesyoucan.jpg"/>
+          </p>
+          <aside class="notes">
+            The best teams have open collaborative cultures.
+            <br />
+            Feedback mecanisms are key. This is only for code.
+            <br />
+            Technical development of the team.
+            <br />
+            Project awareness.
+          </aside>
+        </section>
+
+
+        <section>
+          <h2>Your code review</h2>
+          <p>
+            <img width="300" src="lib/image/sam.jpg"/>
+          </p>
+          <aside class="notes">
+            My work is not going to companies setting up code review scheme.
+            <br>
+            I did research and I presented this talk.
+            <br>
+            If you want more comparison you can ask me.
+            <br />
+            The use of pastebin dissapeared.
+          </aside>
+        </section>
+
+
+        <section style="text-align: left;">
+          <h1>THE END</h1>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+// Full list of configuration options available at:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  controls: true,
+  progress: true,
+  history: true,
+  center: true,
+
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+    // Optional reveal.js plugins
+  dependencies: [
+  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+  { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+  { src: 'plugin/zoom-js/zoom.js', async: true },
+  { src: 'plugin/notes/notes.js', async: true },
+  ]
+});
+
+    </script>
+
+  </body>
 </html>
