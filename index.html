@@ -71,7 +71,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h3> Rodrigo Aguilera</h3>
           <a href="http://dgo.to/@rodrigoaguilera">dgo.to/@rodrigoaguilera</a>
           <p>
-          <img src="lib/image/ymbra.png" style="background: none repeat scroll 0% 0% white;" />
+          <img width="400" src="lib/image/ymbradark.png" style="background: none repeat scroll 0% 0% transparent; border: 0;" />
+          <!-- <img src="lib/image/ymbra.png" style="background: none repeat scroll 0% 0% white;" /> -->
           </p>
           <p>
           Drupal developer at <a href="http://ymbra.com/">Ymbra</a>
@@ -88,9 +89,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
         <section>
           <h2>Acknowledgements</h2>
-          <p>
+          <p class="fragment">
           Pedro Cambra
-          <br />
+          </p>
+          <p class="fragment">
           Ymbra
           </p>
           <aside class="notes">
@@ -107,10 +109,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>Why?</h2>
             <p>
             <ul>
-              <li>Reduces defects</li>
-              <li>Spreads code ownership</li>
-              <li>Mentors new developers</li>
-              <li>Changed my life as a developer</li>
+              <li class="fragment">Reduces defects</li>
+              <li class="fragment">Spreads code ownership</li>
+              <li class="fragment">Mentors new developers</li>
+              <li class="fragment">Changed my life as a developer</li>
             </ul>
           </p>
           <aside class="notes">
@@ -128,22 +130,23 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>"But nobody does code review..."</h2>
           <p>
           <ul>
-            <li>Too busy to review</li>
-            <li>Code reviews can get nasty</li>
-            <li>Introduces a block</li>
-            <li>I don't want to leave the IDE</li>
-            <li>A cost effective solution</li>
-            <li>Is all about code quality</li>
+            <li class="fragment">Too busy to review</li>
+            <li class="fragment">Code reviews can get nasty</li>
+            <li class="fragment">Introduces a block</li>
+            <li class="fragment">I don't want to leave the IDE</li>
+            <li class="fragment">A cost effective solution</li>
+            <li class="fragment">Is all about code quality</li>
           </ul>
           </p>
           <aside class="notes">
-            Fixing a bug during the review proccess is much cheaper than if later phases, not talk about production.
-            <br>
             If you cannot talk about code you have a problem of communication but I can show you how can you get the ego out of it.
             <br>
             There's tools to assist you also on the IDE.
             <br>
             If your are not convinced about code quality code review makes little sense.
+            <br />
+            Fixing a bug during the review proccess is much cheaper than if later phases, not talk about production.
+            <br>
           </aside>
         </section>
 
@@ -166,10 +169,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>Be prepared</h2>
           <p>
           <ul>
-            <li>Try to make everything code </li>
-            <li>Review everything: configuration, file names, variable naming...</li>
-            <li>If it can be diffed it can be reviewed</li>
-            <li>The review should ignore all those files not relevant like images, binaries or intermediate code(e.g. sass)</li>
+            <li class="fragment">Try to make everything code </li>
+            <li class="fragment">Review everything: configuration, file names, variable naming...</li>
+            <li class="fragment">If it can be diffed it can be reviewed</li>
+            <li class="fragment">The review should ignore all those files not relevant like images, binaries or intermediate code(e.g. sass)</li>
           </ul>
           </p>
           <aside class="notes">
@@ -190,19 +193,22 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>A change in the culture</h2>
           <p>
           <ul>
-            <li>The code is going to be read</li>
-            <li>Make code activity visible</li>
-            <li>Make code shareable with links</li>
-            <li>Make code digestible (encourage small changes)</li>
-            <li>Support conversations about code</li>
+            <li class="fragment">The code is going to be read</li>
+            <li class="fragment">Make code activity visible</li>
+            <li class="fragment">Make code digestible (encourage small changes)</li>
+            <li class="fragment">Support conversations about code</li>
           </ul>
           </p>
           <aside class="notes">
              The comment I'm writing is going to be read by people, is not going to go into the black hole of the repository
              <br>
-             My goal is easing you into this change of culture and since some of the tools I'm going to present you are opinionated.
+             What we do day to day.
+             <br />
+             Changes large and complicated to be reviewed are that. You can split them.
+             <br />
+             Review tends to encourage smaller and better-factored changes and more unexpected things.
              <br>
-             Changes which are too large or too complicated to be reviewed quickly are often too large and too complicated, period. Nearly all large changes can be split apart into small, independent pieces which are easier to understand and test. Review tends to encourage smaller and better-factored changes.
+             My goal is easing you into this change of culture and since some of the tools I'm going to present you are opinionated.
           </aside>
         </section>
 
@@ -211,15 +217,18 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>A change in the culture (continued)</h2>
           <p>
           <ul>
-            <li>The best time to talk about parts of the application you don't like</li>
-            <li>Code ownership</li>
-            <li>Be proud about your team not your code</li>
-            <li>Transmission of code and solutions automagically</li>
-            <li>You have a proccess in place when you are not sure about changes</li>
-            <li>Multi functional teams</li>
+            <li class="fragment">The best time to talk about parts of the application you don't like</li>
+            <li class="fragment">Code ownership</li>
+            <li class="fragment">Be proud about your team not your code</li>
+            <li class="fragment">Transmission of code and solutions automagically</li>
+            <li class="fragment">Make code shareable with links</li>
+            <li class="fragment">You have a proccess in place when you are not sure about changes</li>
+            <li class="fragment">Multi functional teams</li>
           </ul>
           </p>
           <aside class="notes">
+            Opening a file and finding code that you don't like is demoralizing
+            <br />
             Show me the code.
             <br />
             Happens to us many time that we talk about a solution and is not very clear until we see the code.
@@ -228,8 +237,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <br />
             You can discover some communication problems while introducing code review
             <br>
-            Opening a file and finding code that you don't like is demoralizing
-            <br />
             Can you look at my change when you have time? never happens
           </aside>
         </section>
@@ -239,13 +246,13 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>New developers</h2>
           <p>
           <ul>
-            <li>They will gain experience faster</li>
-            <li>Is much more safer for them to commit code</li>
-            <li>Developers are eager to fix the feedback and reach an agreement</li>
+            <li class="fragment">They will gain experience faster</li>
+            <li class="fragment">Is much more safer for them to commit code</li>
+            <li class="fragment">Developers are eager to fix the feedback and reach an agreement</li>
           </ul>
           </p>
           <aside class="notes">
-            I cannot emphasize enough how great is codereview for this task.
+            I cannot emphasize enough how great is code review for this task.
             <br>
             By the time code review was introduced on my team I was still fresh.
             <br>
@@ -266,10 +273,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>How to get started</h2>
           <p>
             <ul>
-              <li>Go slow</li>
-              <li>Just the diffs</li>
-              <li>Review just the scary smelly parts</li>
-              <li>On demand</li>
+              <li class="fragment">Go slow</li>
+              <li class="fragment">Just the diffs</li>
+              <li class="fragment">Review just the scary smelly parts</li>
+              <li class="fragment">On demand</li>
             </ul>
           </p>
           <aside class="notes">
@@ -284,7 +291,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
         </section>
 
 
-
         <section>
           <h2>Pre/Post commit review</h2>
           <p>
@@ -294,11 +300,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           Post commit is also known as code audit or inspection.
           </p>
           <aside class="notes">
-            If you have common interface for browsing you can always do informal audit.
-            <br>
             Code review as a firewall.
             <br>
-            precommit review is more ready to chenge arquitecture.
+            precommit review is more ready to change arquitecture.
+            <br>
+            If you have common interface for browsing you can always do informal audit.
           </aside>
         </section>
 
@@ -311,14 +317,16 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           Integration with static analysis tools
           <br>
           <ul>
-            <li>Coding standards</li>
-            <li>Unit tests</li>
-            <li>Automated builds with continous integration</li>
-            <li>PMD Mess detector, Duplicate code</li>
+            <li class="fragment">Coding standards</li>
+            <li class="fragment">Unit tests</li>
+            <li class="fragment">Automated builds with continous integration</li>
+            <li class="fragment">PMD Mess detector, Duplicate code</li>
           </ul>
           </p>
           <aside class="notes">
             Machines are mean but no one can blame them.
+            <br />
+            They notify you with colors.
             <br />
             Probably you will have to explain the importance of code review to new developers.
             <br />
@@ -331,12 +339,12 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>Code review by humans</h2>
           <p>
           <ul>
-            <li>Requirements</li>
-            <li>Architecture</li>
-            <li>Futureproof code</li>
-            <li>Coding idioms</li>
-            <li>Potential reuse</li>
-            <li>Domain knowledge</li>
+            <li class="fragment">Requirements</li>
+            <li class="fragment">Architecture</li>
+            <li class="fragment">Futureproof code</li>
+            <li class="fragment">Coding idioms</li>
+            <li class="fragment">Potential reuse</li>
+            <li class="fragment">Domain knowledge</li>
           </ul>
           </p>
           <aside class="notes">
@@ -345,8 +353,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             An idiom is how we retrieve a node or check the role of a user.
             <br />
             Review happens in other professions.
-            <br />
-            Pair programming is another form of code
           </aside>
         </section>
 
@@ -356,10 +362,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <p>
             Another form of code review <br />
           <ul>
-            <li>Real time</li>
-            <li>Very effective and great for mentoring</li>
-            <li>Requires two developers in the same location</li>
-            <li>Less value for the rest of the team</li>
+            <li class="fragment">Real time</li>
+            <li class="fragment">Very effective and great for mentoring</li>
+            <li class="fragment">Requires two developers in the same location</li>
+            <li class="fragment">Less value for the rest of the team</li>
           </ul>
           </p>
           <aside class="notes">
@@ -387,8 +393,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <aside class="notes">
             Raise hands.
             <br />
-            Remenber We are a team.
-            <br />
             Monster code: old and scary.
             <br />
             Reuse functions.
@@ -396,6 +400,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             External contractors.
             <br />
             Spaghetti code overall.
+            <br />
+            Remenber We are a team.
           </aside>
         </section>
 
@@ -404,12 +410,12 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>Tool assisted code review</h2>
           <p>
           <ul>
-            <li>Manages workflow and notifications </li>
-            <li>Records of discussion</li>
-            <li>Asyncronous</li>
-            <li>Some are very opinionated</li>
-            <li>Minimum requirements: diffs, inline comments and states</li>
-            <li>Extras: roles, auto merge, commit, rebase, notifications, integration with other tools, etc.</li>
+            <li class="fragment">Manages workflow and notifications </li>
+            <li class="fragment">Records of discussion</li>
+            <li class="fragment">Asyncronous</li>
+            <li class="fragment">Some are very opinionated</li>
+            <li class="fragment">Minimum requirements: diffs, inline comments and states</li>
+            <li class="fragment">Extras: roles, auto merge, commit, rebase, notifications, integration with other tools, etc.</li>
           </ul>
           </p>
           <aside class="notes">
@@ -431,10 +437,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <h2>Tools</h2>
             <p>
             <ul>
-              <li> Good ol' patches (Drupal.org)</li>
-              <li> Pull requests (merge requests in gitlab)</li>
-              <li> Gerrit</li>
-              <li> Redmine</li>
+              <li class="fragment"> Good ol' patches (Drupal.org)</li>
+              <li class="fragment"> Pull requests (merge requests in gitlab)</li>
+              <li class="fragment"> Gerrit</li>
+              <li class="fragment"> Redmine</li>
             </ul>
             </p>
             <aside class="notes">
@@ -453,6 +459,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               We should be all familiar with it.
               <br />
               Is kind of the legacy way to do code review.
+              <br />
+              Interdiff
             </aside>
           </section>
 
@@ -475,13 +483,13 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <h2>Github pull requests (merge request on gitlab)</h2>
             <p>
             <ul>
-              <li>Merge the code from one branch to another</li>
-              <li>Can span many commits</li>
-              <li>Some developers prefer this way over d.o</li>
+              <li class="fragment">Merge the code from one branch to another</li>
+              <li class="fragment">Can span many commits</li>
+              <li class="fragment">Some developers prefer this way over d.o</li>
             </ul>
             </p>
             <aside class="notes">
-              even remote branches.
+              Even remote branches.
               <br />
               Some modules are developed on github and cloned on d.o
               <br />
@@ -489,7 +497,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               <br />
               Is also very supported by continuous integration systems.
               <br />
-              Don't enforce much like emails, commit messages or cleanness of the merge.
+              Don't enforce much like email format, commit messages or cleanness of the merge.
             </aside>
           </section>
 
@@ -521,8 +529,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
 
           <section>
             <h2>Gerrit</h2>
-            <p>
-            Big projects using it
+            Big projects using it<br />
             <ul>
               <li>Android</li>
               <li>Cyanogenmod</li>
@@ -532,11 +539,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               <li>And many other google projects</li>
               <li><a href="https://gerrit-review.googlesource.com/#/q/status:open">Gerrit itself </a>
             </ul>
-            </p>
             <aside class="notes">
               Wikipedia
-              <br>
-              And gerrit itself.
             </aside>
           </section>
 
@@ -554,6 +558,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               Submit (merge) happens automatically when is approved.
               <br>
               It has granular permissions (access control model).
+              <br />
+              The CI can take also from the changes pool.
             </aside>
           </section>
 
@@ -564,7 +570,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <img src="lib/image/gerritlist.png" />
             </p>
             <aside class="notes">
+              List projects, branches.
+              <br />
               We try to do chop a feature in small tasks so that each one of them is a commit.
+              <br />
             </aside>
           </section>
 
@@ -583,7 +592,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               <br>
               Make your commit pretty until is approved.
               <br>
-              The concept of interdiff in d.o
+              You can stablish dependencies between commits.
             </aside>
           </section>
 
@@ -598,7 +607,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               <br>
               You can even post comments on the commit message.
               <br>
-              You can stablish dependencies between commits.
+              The concept of interdiff in d.o
             </aside>
           </section>
 
@@ -607,13 +616,13 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <h2>Gerrit approval</h2>
             <p>
             <img src="lib/image/gerritaproval.jpg" />
-            <br />
-            A commit can not be merged with at least one -2 and should have at least one +2
             </p>
             <aside class="notes">
               The +1,s don't accumulate.
               <br />
               Not so brave reviewers can post a lot of +1.
+              <br />
+              A commit can not be merged with at least one -2 and should have at least one +2
             </aside>
           </section>
 
@@ -652,10 +661,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <h2>Gerrit drawbacks</h2>
             <p>
             <ul>
-              <li>Interface</li>
-              <li>Has a learning curve</li>
-              <li>Requires to define a review process</li>
-              <li>No audit (Post commit)</li>
+              <li class="fragment">Interface</li>
+              <li class="fragment">Has a learning curve</li>
+              <li class="fragment">Requires to define a review process</li>
+              <li class="fragment">No audit (Post commit)</li>
             </ul>
             </p>
             <aside class="notes">
@@ -671,10 +680,10 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <p>
             <img src="lib/image/redmine-logo.png"/>
             <ul>
-              <li><a href="http://www.redmine.org/plugins/redmine_code_review">Implemented as a plugin</a></li>
-              <li>Post-commit</li>
-              <li>Creates review request over a commit on demand</li>
-              <li>Or you can inspect the repo creating comments that are issues to be solved</li>
+              <li class="fragment"><a href="http://www.redmine.org/plugins/redmine_code_review">Implemented as a plugin</a></li>
+              <li class="fragment">Post-commit</li>
+              <li class="fragment">Creates review request over a commit on demand</li>
+              <li class="fragment">Or you can inspect the repo creating comments that are issues to be solved</li>
             </ul>
             </p>
             <aside class="notes">
@@ -683,6 +692,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
               Post commit review that can not be ignored.
               <br />
               There's many teams relying on redmine so maybe having the code review there makes sense.
+              <br />
+              You can mix post and pre tools.
             </aside>
           </section>
         </section>
@@ -700,6 +711,8 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             Wikimedia has a plan to drop gerrit and use phabricator.
             <br />
             No phabricator integration with jenkins.
+            <br />
+            Phabricator is a suite.
           </aside>
         </section>
 
@@ -708,11 +721,11 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
           <h2>Ego free reviews</h2>
           <p>
             <ul>
-              <li>No finger-pointing</li>
-              <li>No point scoring. It's all about doing things right.</li>
-              <li>Don't be pedantic</li>
-              <li>Find problems, not solutions</li>
-              <li>Embrace feedback</li>
+              <li class="fragment">No finger-pointing</li>
+              <li class="fragment">No point scoring. It's all about doing things right.</li>
+              <li class="fragment">Don't be pedantic</li>
+              <li class="fragment">Find problems, not solutions</li>
+              <li class="fragment">Embrace feedback</li>
             </ul>
           </p>
           <aside class="notes">
@@ -722,6 +735,7 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
             <br>
             Let the automatic tools be pedantic. If it is not the case you can rephrase it.
             <br>
+            Look at the reviews of the core commiters.
           </aside>
         </section>
 
